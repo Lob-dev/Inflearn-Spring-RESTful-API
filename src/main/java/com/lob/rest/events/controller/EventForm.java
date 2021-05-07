@@ -1,8 +1,11 @@
 package com.lob.rest.events.controller;
 
 import com.lob.rest.events.domain.EventStatus;
-import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.hateoas.RepresentationModel;
 
 import javax.validation.constraints.Min;
@@ -11,9 +14,9 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 /**
- * @author lob
+ * @since       2021.04.02
+ * @author      lob
  * @description EventForm
- * @since 2021.04.02
  **********************************************************************************************************************/
 public class EventForm {
 

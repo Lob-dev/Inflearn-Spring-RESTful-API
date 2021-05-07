@@ -18,11 +18,15 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static com.lob.rest.events.EventTestHelper.getEventBadRequest;
 import static com.lob.rest.events.EventTestHelper.getEventRequest;
-import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.*;
+import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.halLinks;
+import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.linkWithRel;
+import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.links;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
 @SpringBootTest
@@ -144,9 +148,7 @@ public class EventControllerTest {
                                 linkWithRel("self").description("Link to create event"),
                                 linkWithRel("event").description("Link to view all events"),
                                 linkWithRel("update").description("Link to update the event")
-                        ),
-                        rel
-
+                        )
                 ))
         ;
     }
