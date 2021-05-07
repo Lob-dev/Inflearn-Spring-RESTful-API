@@ -1,5 +1,9 @@
 package com.lob.rest.events;
 
+import com.lob.rest.events.controller.EventForm;
+import com.lob.rest.events.domain.Event;
+import com.lob.rest.events.domain.EventStatus;
+
 import java.time.LocalDateTime;
 
 /**

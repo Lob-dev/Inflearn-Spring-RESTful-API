@@ -1,4 +1,4 @@
-package com.lob.rest.events;
+package com.lob.rest.events.domain;
 
 public enum EventStatus {
 

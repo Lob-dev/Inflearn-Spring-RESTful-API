@@ -1,20 +1,17 @@
-package com.lob.rest.events;
+package com.lob.rest.events.mapper;
 
-import com.lob.rest.events.domain.Event;
-import com.lob.rest.events.domain.Event.EventBuilder;
 import com.lob.rest.events.controller.EventForm.Request.Add;
 import com.lob.rest.events.controller.EventForm.Response.FindOne;
+import com.lob.rest.events.controller.EventForm.Response.FindOne.FindOneBuilder;
+import com.lob.rest.events.domain.Event;
+import com.lob.rest.events.domain.Event.EventBuilder;
 import javax.annotation.processing.Generated;
-
-import com.lob.rest.events.mapper.EventMapper;
-import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-05-06T14:00:31+0900",
-    comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.10 (ojdkbuild)"
+    date = "2021-05-06T16:13:21+0900",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.10 (ojdkbuild)"
 )
-@Component
 public class EventMapperImpl implements EventMapper {
 
     @Override
@@ -51,8 +48,23 @@ public class EventMapperImpl implements EventMapper {
             return null;
         }
 
-        FindOne findOne = new FindOne();
+        FindOneBuilder findOne = FindOne.builder();
 
-        return findOne;
+        findOne.id( event.getId() );
+        findOne.name( event.getName() );
+        findOne.description( event.getDescription() );
+        findOne.beginEnrollmentDateTime( event.getBeginEnrollmentDateTime() );
+        findOne.closeEnrollmentDateTime( event.getCloseEnrollmentDateTime() );
+        findOne.beginEventDateTime( event.getBeginEventDateTime() );
+        findOne.endEventDateTime( event.getEndEventDateTime() );
+        findOne.location( event.getLocation() );
+        findOne.basePrice( event.getBasePrice() );
+        findOne.maxPrice( event.getMaxPrice() );
+        findOne.limitOfEnrollment( event.getLimitOfEnrollment() );
+        findOne.offline( event.isOffline() );
+        findOne.free( event.isFree() );
+        findOne.eventStatus( event.getEventStatus() );
+
+        return findOne.build();
     }
 }
