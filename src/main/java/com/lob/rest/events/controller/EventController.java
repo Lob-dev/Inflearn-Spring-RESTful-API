@@ -1,25 +1,28 @@
 package com.lob.rest.events.controller;
 
+import com.lob.rest.events.controller.EventForm.Request;
 import com.lob.rest.events.controller.EventForm.Response;
 import com.lob.rest.events.domain.Event;
 import com.lob.rest.events.domain.EventRepository;
-import com.lob.rest.events.domain.EventValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.hateoas.MediaTypes;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.lob.rest.events.controller.EventForm.Request;
 
 import javax.validation.Valid;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static com.lob.rest.events.mapper.EventMapper.mapper;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
+/**
+ * @since       2021.04.02
+ * @author      lob
+ * @description EventController
+ **********************************************************************************************************************/
 @Controller
 @RequestMapping(value="/api/events", produces=MediaTypes.HAL_JSON_VALUE+";charset=UTF-8")
 @RequiredArgsConstructor
