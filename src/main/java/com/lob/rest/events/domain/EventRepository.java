@@ -1,7 +1,6 @@
-package com.lob.rest.events;
+package com.lob.rest.events.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  * @author lob
